@@ -5,11 +5,17 @@
     <title>Heoll页面</title>
 </head>
 <body>
-<h1 th:text="${host}">111111</h1>
-<!--<img th:src="${host}" alt="" />-->
-<img src="http://pic-centanet-com.oss-cn-beijing.aliyuncs.com/other/yanglao/testpictoossff.jpg?x-oss-process=style/1000x700" alt="" />
+<h1>这个是heoll页面，用于spring Security安全控制进行跳转并注销</h1>
 
-<img src="http://pic-centanet-com.oss-cn-beijing.aliyuncs.com/other/yanglao/pretty/20200102/97ed81fff38f4d4394e9f9747a463fa8.jpg?x-oss-process=style/300x210"
-     alt="">
+<h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="注销"/>
+</form>
+
+<!--<h1 th:text="${host}">111111</h1>-->
+<!--<img src="http://pic-centanet-com.oss-cn-beijing.aliyuncs.com/other/yanglao/testpictoossff.jpg?x-oss-process=style/1000x700" alt="" />-->
+<!---->
+<!--<img src="http://pic-centanet-com.oss-cn-beijing.aliyuncs.com/other/yanglao/pretty/20200102/97ed81fff38f4d4394e9f9747a463fa8.jpg?x-oss-process=style/300x210"-->
+     <!--alt="">-->
 </body>
 </html>
